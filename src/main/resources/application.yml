@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: demo-keycloak
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:3030/realms/Realm1
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/lab4
+    username: postgres
+    password: admin
+
+keycloak:
+  server-url: http://localhost:3030
+  realm: Realm1
+  client-id: backend-client1
+  client-secret: tq3BJ62IdJmCFA5lKXaaR5DB59rpwj2J
